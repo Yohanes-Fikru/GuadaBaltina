@@ -1,0 +1,5 @@
+# Turn on the rewrite engine
+RewriteEngine On
+
+# Rewrite requests for /products to the all-products.html file
+RewriteRule ^products/?$ all-products.html [L]
