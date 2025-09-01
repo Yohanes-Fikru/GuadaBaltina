@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff;
+    overflow-x: hidden; 
+}
+
+/* Header Styles */
+header {
+    background-color: #ffffff;
+    padding: 0rem 3vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.main-logo {
+    height: 90px;
+    flex-shrink: 0; 
+}
+
+.spices {
+    display: flex;
+    gap: 1.5vw; 
+    align-items: center;
+    justify-content: center; 
+    flex-grow: 1; 
+    min-width: 0;
+}
+
+/* --- Manually Adjust Header Spice Images (DESKTOP) --- */
+.natural-logo {
+  height: 9vw; 
+  max-height: 160px; 
+  min-height: 80px; 
+  position: relative;
+  right: 2vw; 
+}
+.spices img:nth-child(1) {
+  height: 8vw; 
+  max-height: 140px;
+  min-height: 70px;
+  position: relative;
+  bottom: 0.6rem; 
+  right: 1rem;
+}
+.spices img:nth-child(2) {
+  height: 9vw; 
+  max-height: 160px;
+  min-height: 80px;
+  position: relative;
+  bottom: 1.5rem; 
+  left: 0.3rem;
+}
+.spices img:nth-child(3) {
+  height: 6.5vw; 
+  max-height: 115px;
+  min-height: 60px;
+  position: relative;
+  left: 1.2rem;
+}
+.spices img:nth-child(4) {
+  height: 4.5vw; 
+  max-height: 80px;
+  min-height: 40px;
+  position: relative;
+  right: 0.3rem;
+  bottom: 2.8rem;
+}
+.spices img:nth-child(5) {
+  height: 8vw; 
+  max-height: 140px;
+  min-height: 70px;
+  position: relative;
+  bottom: 1.5rem;
+  left: 1rem;
+}
+.spices img:nth-child(6) {
+  height: 3.5vw; 
+  max-height: 60px;
+  min-height: 30px;
+  position: relative;
+  left: 1rem;
+  bottom: 3.5rem;
+}
+/* --- END OF DESKTOP SECTION --- */
+
+
+.content-wrapper {
+    position: relative; 
+}
+
+/* Main Content (Product List) */
+main {
+    background-color: #585858;
+    color: white;
+    padding: 2rem 4rem;
+}
+
+.product-columns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+    max-width: 1600px;
+    margin: 0 auto;
+    min-height: 400px;
+}
+
+.column p:first-child {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: 700; 
+}
+
+.column p {
+    font-family: 'Lato', sans-serif;
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Footer and Promo Area */
+.promo-area {
+    background-color: white;
+    height: 150px;
+    padding: 0 4rem;
+    display: flex;
+    align-items: flex-end; 
+}
+
+.promo-text {
+    font-family: 'Satisfy', cursive;
+    font-size: 4rem;
+    color: #006400;
+    position: relative;
+    bottom: 20px;
+}
+
+.promo-text span {
+    font-family: 'Satisfy', cursive;
+    font-size: 5rem;
+}
+
+/* The Woman/Model Image (DESKTOP) */
+.promo-image {
+    height: 65vh; 
+    max-height: 700px;
+    width: auto;
+    position: absolute; 
+    right: 0vw;    
+    bottom: 0vh;   
+}
+
+/* ================================================== */
+/*  Responsive Styles for Different Screen Sizes      */
+/* ================================================== */
+
+/* --- SMALLER DESKTOPS (1025px to 1200px) --- */
+@media (max-width: 1200px) {
+  .promo-text {
+    font-size: 3rem; 
+  }
+  .promo-text span {
+    font-size: 4rem;
+  }
+  .promo-image {
+    height: 60vh; 
+  }
+  .product-columns {
+    gap: 1.5rem; 
+  }
+}
+
+/* --- NEW: TABLET & SMALL LAPTOP STYLES (769px to 1024px) --- */
+@media (min-width: 769px) and (max-width: 1024px) {
+  
+  /* Hides the model image */
+  .promo-image {
+    display: none;
+  }
+  
+  /* Hides the last 4 spice images (3rd, 4th, 5th, and 6th) */
+  .spices img:nth-child(n+3) {
+    display: none;
+  }
+
+  /* Adjust positioning of the remaining images to look good */
+  .spices img:nth-child(1) { bottom: 0; }
+  .spices img:nth-child(2) { bottom: 0.8rem; }
+}
+
+
+/* --- MOBILE & TABLET STYLES (Up to 768px) --- */
+@media (max-width: 768px) {
+
+  header {
+    padding: 1rem; 
+  }
+  .natural-logo, .main-logo, .spices img {
+    all: unset; /* Resets all desktop positioning/sizing */
+  }
+  .natural-logo { height: 60px; }
+  .main-logo { height: 50px; }
+  
+  .spices {
+    display: none;
+  }
+
+  main {
+    padding: 1.5rem 1rem; 
+  }
+  .product-columns {
+    grid-template-columns: repeat(2, 1fr);
+    min-height: auto; 
+    gap: 1.5rem;
+  }
+
+  .promo-area {
+    height: auto; 
+    padding: 2rem 1rem;
+    justify-content: center; 
+  }
+  
+  .promo-image {
+    display: none;
+  }
+  
+  .promo-text {
+    font-size: 2.5rem; 
+    bottom: 0; 
+    text-align: center;
+  }
+  .promo-text span {
+    font-size: 3.5rem;
+  }
+}
+
+/* --- SMALL PHONE STYLES (Up to 480px) --- */
+@media (max-width: 480px) {
+  
+  .product-columns {
+    grid-template-columns: 1fr;
+  }
+  
+  .promo-text {
+    font-size: 2rem; 
+  }
+  .promo-text span {
+    font-size: 3rem;
+  }
+}
