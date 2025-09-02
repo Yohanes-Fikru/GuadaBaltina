@@ -2,4 +2,5 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/guadabaltina/public_html/
+    - /bin/cp -a * $DEPLOYPATH
     - /bin/cp .htaccess $DEPLOYPATH
